@@ -1,4 +1,4 @@
--- ROCKET // Blade Ball Lite (Arceus X safe)
+-- ROCKET // Blade Ball Phone Lite
 -- Rocket Way 20.05.2026
 local Players = game:GetService("Players")
 local UIS = game:GetService("UserInputService")
@@ -26,20 +26,21 @@ local gui = Instance.new("ScreenGui", LP:WaitForChild("PlayerGui"))
 gui.Name = "ROCKET_BB"
 gui.ResetOnSpawn = false
 
+-- компактное окно под телефон
 local main = Instance.new("Frame", gui)
-main.Size = UDim2.new(0, 300, 0, 540)
-main.Position = UDim2.new(0, 10, 0.5, -270)
+main.Size = UDim2.new(0, 210, 0, 340)
+main.Position = UDim2.new(0, 8, 0.5, -170)
 main.BackgroundColor3 = Color3.fromRGB(15, 10, 25)
 main.BorderSizePixel = 0
 main.ClipsDescendants = true
-Instance.new("UICorner", main).CornerRadius = UDim.new(0, 12)
+Instance.new("UICorner", main).CornerRadius = UDim.new(0, 10)
 
 local bg = Instance.new("ImageLabel", main)
 bg.Size = UDim2.new(1, 0, 1, 0)
 bg.BackgroundTransparency = 1
 bg.Image = FONS[1]
 bg.ScaleType = Enum.ScaleType.Crop
-bg.ImageTransparency = 0.3
+bg.ImageTransparency = 0.35
 bg.ZIndex = 1
 
 local grad = Instance.new("Frame", main)
@@ -57,54 +58,54 @@ ug.Color = ColorSequence.new({
 
 local stroke = Instance.new("UIStroke", main)
 stroke.Color = Color3.fromRGB(180, 60, 255)
-stroke.Thickness = 2
+stroke.Thickness = 1.5
 stroke.Transparency = 0.3
 
 local title = Instance.new("TextLabel", main)
-title.Size = UDim2.new(1, 0, 0, 34)
+title.Size = UDim2.new(1, 0, 0, 26)
 title.BackgroundColor3 = Color3.new(0, 0, 0)
 title.BackgroundTransparency = 0.5
-title.Text = "🌸 ROCKET // BLADE BALL 🌸"
+title.Text = "🌸 ROCKET // BB"
 title.TextColor3 = Color3.fromRGB(255, 200, 255)
 title.Font = Enum.Font.GothamBold
-title.TextSize = 14
+title.TextSize = 12
 title.ZIndex = 5
 
 local minB = Instance.new("TextButton", title)
-minB.Size = UDim2.new(0, 30, 1, 0)
-minB.Position = UDim2.new(1, -30, 0, 0)
+minB.Size = UDim2.new(0, 26, 1, 0)
+minB.Position = UDim2.new(1, -26, 0, 0)
 minB.BackgroundTransparency = 1
 minB.Text = "—"
 minB.TextColor3 = Color3.new(1, 1, 1)
 minB.Font = Enum.Font.GothamBold
-minB.TextSize = 18
+minB.TextSize = 14
 minB.ZIndex = 6
 
 local scroll = Instance.new("ScrollingFrame", main)
-scroll.Size = UDim2.new(1, -12, 1, -46)
-scroll.Position = UDim2.new(0, 6, 0, 40)
+scroll.Size = UDim2.new(1, -8, 1, -32)
+scroll.Position = UDim2.new(0, 4, 0, 28)
 scroll.BackgroundTransparency = 0.6
 scroll.BackgroundColor3 = Color3.fromRGB(10, 5, 20)
 scroll.BorderSizePixel = 0
-scroll.CanvasSize = UDim2.new(0, 0, 0, 1200)
-scroll.ScrollBarThickness = 3
+scroll.CanvasSize = UDim2.new(0, 0, 0, 800)
+scroll.ScrollBarThickness = 2
 scroll.ScrollBarImageColor3 = Color3.fromRGB(200, 100, 255)
 scroll.ZIndex = 4
 
 local lay = Instance.new("UIListLayout", scroll)
-lay.Padding = UDim.new(0, 6)
+lay.Padding = UDim.new(0, 4)
 
 local function btn(text, cb)
     local b = Instance.new("TextButton", scroll)
-    b.Size = UDim2.new(1, -6, 0, 32)
+    b.Size = UDim2.new(1, -6, 0, 26)
     b.BackgroundColor3 = Color3.fromRGB(35, 20, 55)
     b.BackgroundTransparency = 0.3
     b.TextColor3 = Color3.fromRGB(255, 230, 255)
     b.Font = Enum.Font.Gotham
-    b.TextSize = 13
+    b.TextSize = 11
     b.Text = text
     b.ZIndex = 5
-    Instance.new("UICorner", b).CornerRadius = UDim.new(0, 7)
+    Instance.new("UICorner", b).CornerRadius = UDim.new(0, 6)
     local s = Instance.new("UIStroke", b)
     s.Color = Color3.fromRGB(150, 80, 220)
     s.Transparency = 0.5
@@ -114,67 +115,67 @@ end
 
 local function hdr(t)
     local l = Instance.new("TextLabel", scroll)
-    l.Size = UDim2.new(1, -6, 0, 24)
+    l.Size = UDim2.new(1, -6, 0, 18)
     l.BackgroundTransparency = 1
     l.Text = "✦ " .. t .. " ✦"
     l.TextColor3 = Color3.fromRGB(255, 150, 255)
     l.Font = Enum.Font.GothamBold
-    l.TextSize = 12
+    l.TextSize = 10
     l.ZIndex = 5
     return l
 end
 
 local info = Instance.new("Frame", scroll)
-info.Size = UDim2.new(1, -6, 0, 60)
+info.Size = UDim2.new(1, -6, 0, 46)
 info.BackgroundColor3 = Color3.fromRGB(20, 10, 35)
 info.BackgroundTransparency = 0.4
 info.BorderSizePixel = 0
 info.ZIndex = 5
-Instance.new("UICorner", info).CornerRadius = UDim.new(0, 8)
+Instance.new("UICorner", info).CornerRadius = UDim.new(0, 6)
 
 local spdL = Instance.new("TextLabel", info)
-spdL.Size = UDim2.new(1, -10, 0, 18)
-spdL.Position = UDim2.new(0, 5, 0, 4)
+spdL.Size = UDim2.new(1, -8, 0, 14)
+spdL.Position = UDim2.new(0, 4, 0, 3)
 spdL.BackgroundTransparency = 1
-spdL.Text = "⚡ Скорость: 0 стад/с"
+spdL.Text = "⚡ Скорость: 0"
 spdL.TextColor3 = Color3.fromRGB(255, 180, 255)
 spdL.Font = Enum.Font.GothamBold
-spdL.TextSize = 12
+spdL.TextSize = 10
 spdL.TextXAlignment = Enum.TextXAlignment.Left
 spdL.ZIndex = 6
 
 local autL = Instance.new("TextLabel", info)
-autL.Size = UDim2.new(1, -10, 0, 18)
-autL.Position = UDim2.new(0, 5, 0, 26)
+autL.Size = UDim2.new(1, -8, 0, 14)
+autL.Position = UDim2.new(0, 4, 0, 18)
 autL.BackgroundTransparency = 1
 autL.Text = "Авто: 0.03 / 14"
 autL.TextColor3 = Color3.fromRGB(120, 255, 200)
 autL.Font = Enum.Font.Gotham
-autL.TextSize = 12
+autL.TextSize = 10
 autL.TextXAlignment = Enum.TextXAlignment.Left
 autL.ZIndex = 6
 
 local fonL = Instance.new("TextLabel", info)
-fonL.Size = UDim2.new(1, -10, 0, 14)
-fonL.Position = UDim2.new(0, 5, 0, 44)
+fonL.Size = UDim2.new(1, -8, 0, 12)
+fonL.Position = UDim2.new(0, 4, 0, 32)
 fonL.BackgroundTransparency = 1
 fonL.Text = "Фон: Тянка 1"
 fonL.TextColor3 = Color3.fromRGB(255, 200, 255)
 fonL.Font = Enum.Font.Gotham
-fonL.TextSize = 11
+fonL.TextSize = 9
 fonL.TextXAlignment = Enum.TextXAlignment.Left
 fonL.ZIndex = 6
 
--- ===== ЧАСТИЦЫ =====
+-- частицы
 local parts = {}
 task.spawn(function()
-    while task.wait(0.4) do
-        if S.particles and #parts < 20 then
+    while task.wait(0.5) do
+        if S.particles and #parts < 12 then
             local p = Instance.new("TextLabel", gui)
-            p.Size = UDim2.new(0, 14, 0, 14)
+            p.Size = UDim2.new(0, 12, 0, 12)
             p.BackgroundTransparency = 1
             p.Text = "🌸"
-            p.TextSize = 14
+            p.TextSize = 12
             p.TextColor3 = Color3.fromRGB(255, 180, 220)
             p.ZIndex = 1
             p.Position = UDim2.new(math.random(), 0, -0.05, 0)
@@ -197,7 +198,6 @@ task.spawn(function()
     end
 end)
 
--- ===== ЗВУК =====
 local function playSnd()
     if not S.sound then return end
     local s = Instance.new("Sound")
@@ -208,7 +208,6 @@ local function playSnd()
     task.delay(3, function() s:Destroy() end)
 end
 
--- ===== МЯЧ =====
 local function findBall()
     local best, bd = nil, 1e9
     for _, v in pairs(workspace:GetDescendants()) do
@@ -238,7 +237,7 @@ RunService.RenderStepped:Connect(function()
     else
         speed = 0
     end
-    spdL.Text = string.format("⚡ Скорость: %.0f стад/с", speed)
+    spdL.Text = string.format("⚡ Скорость: %.0f", speed)
 
     if S.adapt then
         local iv, r
@@ -253,7 +252,6 @@ RunService.RenderStepped:Connect(function()
     end
 end)
 
--- ===== ПАРИРОВАНИЕ =====
 local function block()
     pcall(function()
         if keypress then keypress(0x46) end
@@ -282,7 +280,6 @@ task.spawn(function()
     end
 end)
 
--- ===== МЕНЮ =====
 hdr("ПАРИРОВАНИЕ")
 btn("Авто-парирование: ВЫКЛ", function(b)
     S.auto = not S.auto
@@ -312,17 +309,17 @@ btn("Радиус +2", function()
 end)
 
 hdr("ВИЗУАЛ")
-btn("Сменить фон (тянка)", function(b)
+btn("Сменить фон", function(b)
     fonIdx = fonIdx + 1
     if fonIdx > #FONS then fonIdx = 1 end
     bg.Image = FONS[fonIdx]
     bg.ImageTransparency = 1
-    Tween:Create(bg, TweenInfo.new(0.5), {ImageTransparency = 0.3}):Play()
+    Tween:Create(bg, TweenInfo.new(0.5), {ImageTransparency = 0.35}):Play()
     fonL.Text = "Фон: Тянка " .. fonIdx
 end)
-btn("Частицы сакуры: ВКЛ", function(b)
+btn("Частицы: ВКЛ", function(b)
     S.particles = not S.particles
-    b.Text = "Частицы сакуры: " .. (S.particles and "ВКЛ" or "ВЫКЛ")
+    b.Text = "Частицы: " .. (S.particles and "ВКЛ" or "ВЫКЛ")
     if not S.particles then
         for _, q in ipairs(parts) do q.o:Destroy() end
         parts = {}
@@ -334,17 +331,7 @@ btn("Звук: ВКЛ", function(b)
     playSnd()
 end)
 
-hdr("КАСТОМ")
-btn("Убрать голову", function()
-    local h = Char:FindFirstChild("Head")
-    if h then h.Transparency = 1 end
-end)
-btn("Заменить ноги (неон)", function()
-    for _, n in ipairs({"Left Leg", "Right Leg", "LeftUpperLeg", "RightUpperLeg"}) do
-        local l = Char:FindFirstChild(n)
-        if l then l.Material = Enum.Material.Neon; l.BrickColor = BrickColor.new("Bright red") end
-    end
-end)
+hdr("БОНУСЫ (безопасные)")
 btn("Взрыв под ногами", function()
     local e = Instance.new("Explosion")
     e.Position = Root.Position
@@ -352,20 +339,33 @@ btn("Взрыв под ногами", function()
     e.BlastPressure = 0
     e.Parent = workspace
 end)
+btn("ESP игроков: ВЫКЛ", function(b)
+    S.esp = not S.esp
+    b.Text = "ESP игроков: " .. (S.esp and "ВКЛ" or "ВЫКЛ")
+    for _, plr in pairs(Players:GetPlayers()) do
+        if plr ~= LP and plr.Character then
+            local hl = plr.Character:FindFirstChild("RocketESP")
+            if S.esp then
+                if not hl then
+                    local h = Instance.new("Highlight", plr.Character)
+                    h.Name = "RocketESP"
+                    h.FillColor = Color3.fromRGB(255, 0, 0)
+                    h.OutlineColor = Color3.fromRGB(255, 255, 0)
+                end
+            else
+                if hl then hl:Destroy() end
+            end
+        end
+    end
+end)
 
-hdr("БОНУСЫ")
-btn("Ускорение (60)", function() Hum.WalkSpeed = 60 end)
-btn("Прыжок (120)", function() Hum.JumpPower = 120; Hum.UseJumpPower = true end)
-btn("Сброс", function() Hum.WalkSpeed = 16; Hum.JumpPower = 50 end)
-
--- ===== СВОРАЧИВАНИЕ / ПЕРЕТАСК =====
 local mini = false
 minB.MouseButton1Click:Connect(function()
     mini = not mini
     scroll.Visible = not mini
     bg.Visible = not mini
     grad.Visible = not mini
-    main.Size = mini and UDim2.new(0, 300, 0, 34) or UDim2.new(0, 300, 0, 540)
+    main.Size = mini and UDim2.new(0, 210, 0, 26) or UDim2.new(0, 210, 0, 340)
     minB.Text = mini and "+" or "—"
 end)
 
@@ -386,7 +386,7 @@ UIS.InputEnded:Connect(function(i)
 end)
 
 Tween:Create(main, TweenInfo.new(0.4), {BackgroundTransparency = 0}):Play()
-Tween:Create(bg, TweenInfo.new(0.6), {ImageTransparency = 0.3}):Play()
+Tween:Create(bg, TweenInfo.new(0.6), {ImageTransparency = 0.35}):Play()
 playSnd()
 
 LP.CharacterAdded:Connect(function(c)
@@ -395,4 +395,4 @@ LP.CharacterAdded:Connect(function(c)
     Root = c:WaitForChild("HumanoidRootPart")
 end)
 
-print("ROCKET // Blade Ball Lite OK")
+print("ROCKET // Blade Ball Phone Lite OK")
